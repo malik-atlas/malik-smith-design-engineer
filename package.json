@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node verify-build.js",
+  "build": "vite build --debug",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview"    
+
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
@@ -32,4 +33,6 @@
   "engines": {
     "node": ">=22.0.0"
   }
+
 }
+
