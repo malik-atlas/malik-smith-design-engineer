@@ -8,7 +8,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: build # Use 'dist' if using Vite, 'build' if using Create React App
     files:
       - '**/*'
   cache:
