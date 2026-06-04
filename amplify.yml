@@ -1,4 +1,3 @@
-version: 1
 frontend:
   phases:
     preBuild:
@@ -6,11 +5,10 @@ frontend:
         - npm install
     build:
       commands:
+        # Diagnostic commands to print the ground-truth names
+        - echo "=== CURRENT DIRECTORY === " && pwd
+        - echo "=== ROOT FILES ===" && ls -la
+        - echo "=== SRC FILES ===" && ls -la src
+        - echo "=== INDEX.HTML SCRIPT TAG ===" && grep -i "script" index.html
+        # Your actual build command
         - npx vite build
-  artifacts:
-    baseDirectory: dist
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
