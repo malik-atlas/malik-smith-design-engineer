@@ -3,11 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci --legacy-peer-deps
+        - npm install
     build:
       commands:
-        # Bypasses tsc strict blocks for hosting, or use 'npm run build' if types are 100% clean
-        - npx vite build 
+        - npx vite build
   artifacts:
     baseDirectory: dist
     files:
