@@ -1,14 +1,17 @@
+version: 1
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm ci # or yarn install
     build:
       commands:
-        # Diagnostic commands to print the ground-truth names
-        - echo "=== CURRENT DIRECTORY === " && pwd
-        - echo "=== ROOT FILES ===" && ls -la
-        - echo "=== SRC FILES ===" && ls -la src
-        - echo "=== INDEX.HTML SCRIPT TAG ===" && grep -i "script" index.html
-        # Your actual build command
-        - npx vite build
+        - npm run build # or yarn build
+  artifacts:
+    # IMPORTANT: This tells Amplify what to deploy
+    baseDirectory: .next # Use 'dist', 'build', or 'out' depending on your framework
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
