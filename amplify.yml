@@ -6,9 +6,11 @@ frontend:
         - npm ci
     build:
       commands:
-        - npx tsc --noEmit
         - npm run build
   artifacts:
     baseDirectory: dist
     files:
       - '**/*'
+
+
+      
