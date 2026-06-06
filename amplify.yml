@@ -3,15 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci # or yarn install
+        - npm ci
     build:
       commands:
-        - npm run build # or yarn build
+        - npx tsc --noEmit
+        - npm run build
   artifacts:
-    # IMPORTANT: This tells Amplify what to deploy
-    baseDirectory: .next # Use 'dist', 'build', or 'out' depending on your framework
+    baseDirectory: dist
     files:
       - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
